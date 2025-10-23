@@ -1,4 +1,4 @@
-import type {AddUserDTO, UserVO, RegisterDTO} from "@auth-matrix/services";
+import type { AddUserDTO, UserVO, RegisterDTO } from "@auth-matrix/services";
 
 /**
  * 拓展用户接口
