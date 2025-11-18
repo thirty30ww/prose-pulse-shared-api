@@ -3,3 +3,5 @@ export * from './vo';
 
 // 重新导出 auth-matrix 的所有类型
 export * from '@auth-matrix/services';
+export {PPRegisterDTO} from "./dto/pp-user.ts";
+export {PPAddUserDTO} from "./dto/pp-user.ts";

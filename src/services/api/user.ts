@@ -1,6 +1,7 @@
 import http from "@auth-matrix/services/http";
-import type { JwtVO, PPAddUserDTO, PPUserVO, PPRegisterDTO } from "../type";
+import type {JwtVO, PPAddUserDTO, PPPermissionVO, PPRegisterDTO, PPUserVO} from "../type";
 import { userApi as authMatrixUserApi, authApi as authMatrixAuthApi } from "@auth-matrix/services/api/user";
+import {PPPermissionDTO} from "../type/dto/pp-user.ts";
 
 /**
  * 用户API
@@ -48,4 +49,32 @@ export const authApi = {
     register(dto: PPRegisterDTO) {
         return http.post<JwtVO>('/pp/auth/register', { data: dto, showSuccess: true });
     }
-};
+}
+
+/**
+ * 权限API
+ */
+export const fPermissionApi = {
+    /**
+     * 添加前台权限
+     * @param dto 前台权限添加请求参数
+     */
+    addPermission(dto: PPPermissionDTO) {
+        return http.post<number>('/pp/permission/add', { data: dto, showSuccess: true });
+    },
+
+    /**
+     * 修改前台权限
+     * @param dto 前台权限修改请求参数
+     */
+    modifyPermission(dto: PPPermissionDTO) {
+        return http.post<number>('/pp/permission/modify', { data: dto, showSuccess: true });
+    },
+
+    /**
+    * 获取前台权限树
+    */
+    getTree() {
+        return http.get<PPPermissionVO[]>('/pp/permission/get');
+    }
+}

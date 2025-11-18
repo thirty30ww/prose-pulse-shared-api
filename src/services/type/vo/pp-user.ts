@@ -1,4 +1,4 @@
-import type { AddUserDTO, UserVO, RegisterDTO } from "@auth-matrix/services";
+import type {UserVO} from "@auth-matrix/services";
 
 /**
  * 拓展用户接口
@@ -8,16 +8,29 @@ export interface PPUserVO extends UserVO {
 }
 
 /**
- * 拓展添加用户接口
+ * PP前台权限实体
  */
-export interface PPAddUserDTO extends AddUserDTO {
-    email?: string;
+export interface PPUsrPermission {
+    id: number;
+    name: string;
+    path?: string;
+    component?: string;
+    permissionCode?: string;
+    type: number;
+    parentId: number;
+    order: number;
+    needVerify: boolean;
+    createTime: string;
+    updateTime: string;
+    isValid: boolean;
+    isDelete: boolean;
 }
 
 /**
- * PP项目注册DTO
+ * PP前台权限VO
  */
-export interface PPRegisterDTO extends RegisterDTO {
-    email: string;
-    captcha: string;
+export interface PPPermissionVO {
+    node: PPUsrPermission;
+    hasPermission: boolean;
+    children: PPPermissionVO[];
 }
