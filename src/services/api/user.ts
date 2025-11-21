@@ -1,7 +1,6 @@
 import http from "@auth-matrix/services/http";
-import type {JwtVO, PPAddUserDTO, PPPermissionVO, PPRegisterDTO, PPUserVO} from "../type";
+import type {JwtVO, PPAddUserDTO, PPPermissionVO, PPRegisterDTO, PPPermissionDTO, PPUserVO} from "../type";
 import { userApi as authMatrixUserApi, authApi as authMatrixAuthApi } from "@auth-matrix/services/api/user";
-import {PPPermissionDTO} from "../type/dto/pp-user.ts";
 
 /**
  * 用户API
