@@ -1,4 +1,5 @@
 import type {UserVO} from "@auth-matrix/services";
+import {PPPermissionType} from "../enum/pp-user.ts";
 
 /**
  * 拓展用户接口
@@ -16,7 +17,7 @@ export interface PPUsrPermission {
     path?: string;
     component?: string;
     permissionCode?: string;
-    type: number;
+    type: PPPermissionType;
     parentId: number;
     order: number;
     needVerify: boolean;
